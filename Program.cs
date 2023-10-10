@@ -11,31 +11,23 @@ string[] productList = File.ReadAllLines("../../../product.txt");
 string[] shoppingCartList = File.ReadAllLines("../../../ShoppingCart.txt");
 string? input = Console.ReadLine();
 
-Console.WriteLine("This is the product list:");
-Product.productList(); //read productList
+
 Console.WriteLine();
 Console.WriteLine("Add item: ");
 Console.WriteLine();
 
 
-//add nr. to productList
-int x = 1;
-
-
-//add shoppingCartList
-for (int i = 1; i <= productList.Length; i++)
+//add to shoppingCartList
+for (int i = 0; i <= productList.Length; i++)
 
 {
-
     if (input == i.ToString())
     {
 
-        File.AppendAllText("../../../ShoppingCart.txt", input + Environment.NewLine);
+        File.AppendAllText("../../../ShoppingCart.txt", productList[i - 1] + Environment.NewLine);
         Console.WriteLine("You added something");
     }
-
 }
-
 
 
 ShoppingCart.ReadCart();
@@ -70,7 +62,7 @@ while (true)
 
             Console.Clear();
             Console.WriteLine("Here is the list of available items for sale:\n");
-           // Product.itemList();
+            Product.NrAndReadProductList(); //print productList
             Console.WriteLine("\nWhat would you like to add to your cart?\n");
             switch (Console.ReadLine())
             {

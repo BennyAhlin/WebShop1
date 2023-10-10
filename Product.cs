@@ -11,16 +11,38 @@ namespace WebShop1;
 
 public class Product
 {
-    int position = 1;
+    public static void NrAndReadProductList() //add nr. and print productList
+    {
+        Dictionary<string, int> cartList = new Dictionary<string, int>();
+        string[] productList = File.ReadAllLines("../../../product.txt");
+        int x = 1;
+
+        for (int i = 0; i <= productList.Length; i++)
+        {
+            
+
+            string[] splitLine = productList[i].Split(",");
+            if (int.TryParse(splitLine[1], out int price))
+            {
+
+                cartList.Add(splitLine[0], price);
+            }
+            Console.WriteLine(x + ". " + splitLine[0] + " " + splitLine[1] + ":-");
+            x++;
+
+        }
+
+
+    }
+
+
+
+
+
     public static void productList()
     {
         Dictionary<string, int> product = new Dictionary<string, int>();
         string[] productList = File.ReadAllLines("../../../product.txt");
-
-        for (int i = 0; i < productList.Length; i++)
-        {
-            Console.WriteLine(i = 1);
-        }
 
         foreach (string Article in productList)
         {
@@ -59,7 +81,7 @@ public class Product
 
             //Parse string[1] to int
             int.TryParse(splitLine[1], out int price);
-          
+
             if (newProduct == splitLine[0])
             {
                 product.Add(splitLine[0], price);
@@ -103,14 +125,14 @@ public class Product
 
 
         /* Calculate the total price
-     
+
         int totalPrice = 0;
 
         foreach (string item in addedProductList)
         {
-            
+
                 totalPrice += 
-            
+
         }
 
 

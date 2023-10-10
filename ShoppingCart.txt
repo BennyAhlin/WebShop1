@@ -1,0 +1,4 @@
+Äpple,15
+Chips,20
+Läsk,11
+Äpple,15
