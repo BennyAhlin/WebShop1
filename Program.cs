@@ -9,33 +9,17 @@ List<string> customer = new List<string>();
 Dictionary<string, int> cartList = new Dictionary<string, int>();
 string[] productList = File.ReadAllLines("../../../product.txt");
 string[] shoppingCartList = File.ReadAllLines("../../../ShoppingCart.txt");
-string? input = Console.ReadLine();
-
-
-Console.WriteLine();
-Console.WriteLine("Add item: ");
-Console.WriteLine();
-
-
-//add to shoppingCartList
-for (int i = 0; i <= productList.Length; i++)
-
-{
-    if (input == i.ToString())
-    {
-
-        File.AppendAllText("../../../ShoppingCart.txt", productList[i - 1] + Environment.NewLine);
-        Console.WriteLine("You added something");
-    }
-}
-
-
-ShoppingCart.ReadCart();
 
 
 
 
 
+
+
+
+
+
+ShoppingCart.AddCart();
 
 
 

@@ -17,14 +17,14 @@ public class Product
         string[] productList = File.ReadAllLines("../../../product.txt");
         int x = 1;
 
-        for (int i = 0; i <= productList.Length; i++)
+        for (int y = 0; y < productList.Length; y++)
         {
             
 
-            string[] splitLine = productList[i].Split(",");
+            string[] splitLine = productList[y].Split(",");
             if (int.TryParse(splitLine[1], out int price))
             {
-
+             
                 cartList.Add(splitLine[0], price);
             }
             Console.WriteLine(x + ". " + splitLine[0] + " " + splitLine[1] + ":-");

@@ -21,40 +21,32 @@ public class ShoppingCart
     }
 
 
-    public static void AddCart()
+    public static void AddCart() //add shoppingCartList
 
     {
         Dictionary<string, int> cartList = new Dictionary<string, int>();
         string[] productList = File.ReadAllLines("../../../product.txt");
         string[] shoppingCartList = File.ReadAllLines("../../../ShoppingCart.txt");
-        string? input = Console.ReadLine();
-
-        Console.WriteLine("This is the product list:");
-        Product.productList(); //read productList
-        Console.WriteLine();
-        Console.WriteLine("Add item: ");
-        Console.WriteLine();
-
-
-        //add shoppingCartList
-        for (int i = 1; i <= productList.Length; i++)
-        {
-
-            if (input == productList[i])
-            {
-
-                File.AppendAllText("../../../ShoppingCart.txt", input + Environment.NewLine);
-
-            }
-
-        }
-
-  
-
-          
         
 
+        Console.WriteLine("This is the product list:");
+        Product.NrAndReadProductList(); //read productList
+        Console.WriteLine();
+        Console.WriteLine("Choose the number of product to add to Shopping Cart: ");
+        Console.WriteLine();
+        string? input = Console.ReadLine();
 
+        for (int i = 0; i < productList.Length; i++)
+        {
+                string[] splitLine = productList[i].Split(",");
+           
+            if (input == i.ToString())
+            {
+                File.AppendAllText("../../../ShoppingCart.txt", productList[i - 1] + Environment.NewLine);
+                Console.WriteLine("You added: " + splitLine[i - 1]);
+
+            }
+        }
 
 
     }
