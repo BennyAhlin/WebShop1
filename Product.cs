@@ -20,7 +20,6 @@ public class Product
         for (int y = 0; y < productList.Length; y++)
         {
 
-
             string[] splitLine = productList[y].Split(",");
             if (int.TryParse(splitLine[1], out int price))
             {
@@ -31,15 +30,13 @@ public class Product
             x++;
 
         }
-
-
     }
+
+    
 
 }
 
-
-/* Calculate the total price
-
+/* Calculate the total price - DETTA FIXAR VI!!
 int totalPrice = 0;
 
 foreach (string item in addedProductList)

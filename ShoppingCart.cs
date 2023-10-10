@@ -43,11 +43,9 @@ public class ShoppingCart
             if (input == i.ToString())
             {
                 File.AppendAllText("../../../ShoppingCart.txt", productList[i - 1] + Environment.NewLine);
-                Console.WriteLine("You added: " + splitLine[i - 1]);
 
             }
         }
-
 
     }
 
@@ -56,7 +54,6 @@ public class ShoppingCart
 
     {
         ReadCart();
-
 
 
     }
