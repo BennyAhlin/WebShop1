@@ -12,10 +12,15 @@ namespace WebShop1;
 public class Product
 {
     int position = 1;
-    public static void itemList()
+    public static void productList()
     {
         Dictionary<string, int> product = new Dictionary<string, int>();
         string[] productList = File.ReadAllLines("../../../product.txt");
+
+        for (int i = 0; i < productList.Length; i++)
+        {
+            Console.WriteLine(i = 1);
+        }
 
         foreach (string Article in productList)
         {

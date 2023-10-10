@@ -1,2 +1,3 @@
 ﻿Äpple,15
-Bärs,12
+Chips,20
+Läsk,11

@@ -9,6 +9,4 @@ namespace WebShop1;
 public class Login
 {
 
-
-
 }
